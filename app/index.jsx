@@ -11,7 +11,7 @@ export default function Index() {
     return (
         <View className="flex-1 items-center justify-center bg-white">
 
-            <Text className="text-3xl font-pblack">Aora!</Text>
+            <Text className="text-2xl font-black">Tu Lat Twl</Text>
             <StatusBar style='auto' />
             <Link href="/home" style={{ color: 'blue'}}>Go to Home</Link>
         </View>
