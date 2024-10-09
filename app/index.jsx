@@ -1,6 +1,6 @@
 import * as SplashScreen from 'expo-splash-screen';
 import 'react-native-reanimated';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import {Link } from 'expo-router';
 
@@ -9,19 +9,11 @@ SplashScreen.preventAutoHideAsync();
 
 export default function Index() {
     return (
-        <View style={styles.container}>
-            <Text>Aora!</Text>
+        <View className="flex-1 items-center justify-center bg-white">
+
+            <Text className="text-3xl font-pblack">Aora!</Text>
             <StatusBar style='auto' />
-            <Link href="/profile" style={{ color: 'blue'}}>Go to Profile</Link>
+            <Link href="/home" style={{ color: 'blue'}}>Go to Home</Link>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-});
