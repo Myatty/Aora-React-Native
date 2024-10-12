@@ -30,9 +30,9 @@ const TabLayout = () => {
           tabBarInactiveTintColor: "#CDCDE0",
           tabBarShowLabel: false,
           tabBarStyle: {
-            backgroundColor: "#161622",
-            borderTopWidth: 1,
-            borderTopColor: "#232533",
+            //backgroundColor: "#161622",
+            //borderTopWidth: 1,
+            //borderTopColor: "#232533",
             height: 84,
           },
         }}
@@ -83,21 +83,7 @@ const TabLayout = () => {
             ),
           }}
         />
-        <Tabs.Screen
-          name="profile"
-          options={{
-            title: "Profile",
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <TabIcon
-                icon={icons.profile}
-                color={color}
-                name="Profile"
-                focused={focused}
-              />
-            ),
-          }}
-        />
+        
       </Tabs>
 
     </>
