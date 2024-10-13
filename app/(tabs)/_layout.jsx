@@ -38,15 +38,15 @@ const TabLayout = () => {
         }}
       >
         <Tabs.Screen
-          name="home"
+          name="map"
           options={{
-            title: "Home",
+            title: "Map",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={icons.home}
+                icon={icons.map}
                 color={color}
-                name="Home"
+                name="Map"
                 focused={focused}
               />
             ),
@@ -55,13 +55,13 @@ const TabLayout = () => {
         <Tabs.Screen
           name="bookmark"
           options={{
-            title: "Bookmark",
+            title: "Chat",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={icons.bookmark}
+                icon={icons.chat}
                 color={color}
-                name="Bookmark"
+                name="Chat"
                 focused={focused}
               />
             ),

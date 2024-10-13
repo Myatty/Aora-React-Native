@@ -3,10 +3,10 @@ import React, { useEffect, useRef, useState } from "react";
 import MapView, { Circle } from "react-native-maps";
 import * as Location from "expo-location";
 
-const Home = () => {
+const Map = () => {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-  const [radius, setRadius] = useState(200);
+  const [radius, setRadius] = useState(150);
   const mapRef = useRef(null); // referece for MapView
 
   useEffect(() => {
@@ -135,4 +135,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Map;
