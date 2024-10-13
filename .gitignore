@@ -12,6 +12,7 @@ web-build/
 package-lock.json
 package.json
 babel.config.json
+.env
 
 # macOS
 .DS_Store
