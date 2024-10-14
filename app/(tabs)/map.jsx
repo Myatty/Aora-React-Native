@@ -1,17 +1,15 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
-import MapView, { Circle, Marker } from "react-native-maps"; // Import Marker from react-native-maps
+import MapView, { Circle, Marker } from "react-native-maps"; 
 import * as Location from "expo-location";
-import axios from "axios"; // Import axios for API requests
-
-
+import axios from "axios"; 
 
 const Map = () => {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [radius, setRadius] = useState(150);
-  const [marker, setMarker] = useState(null); // State to store the marker position
-  const [weatherData, setWeatherData] = useState(null); // State to store weather data
+  const [marker, setMarker] = useState(null); 
+  const [weatherData, setWeatherData] = useState(null); 
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -47,26 +45,25 @@ const Map = () => {
   };
 
   const handleMapPress = async (event) => {
+
     // Get the coordinates where the user pressed
     const { latitude, longitude } = event.nativeEvent.coordinate;
-
-    // Update the marker position, replacing any existing marker
+       
     setMarker({ latitude, longitude });
-
-    // Fetch weather data for the selected location
     await fetchWeatherData(latitude, longitude);
   };
 
+  // axios nae api ka ny data fetch tr
   const fetchWeatherData = async (lat, lon) => {
-    const apiKey = "9fa7908f1082d055d948753d170644a0"; // Replace with your actual API key
+    const apiKey = "9fa7908f1082d055d948753d170644a0"; 
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric` // Use metric units for temperature
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`,(50000) // Use metric units for temperature
       );
-      setWeatherData(response.data); // Store the fetched weather data
+      setWeatherData(response.data); 
     } catch (error) {
       console.error("Error fetching weather data:", error.message);
-      setWeatherData(null); // Reset weather data in case of an error
+      setWeatherData(null); 
     }
   };
 
@@ -130,7 +127,7 @@ const Map = () => {
             />
           </TouchableOpacity>
 
-          {/* Display weather data if available */}
+          {/* display weather data */}
           {weatherData && (
             <View style={styles.weatherContainer}>
               <Text style={styles.weatherText}>Weather Data:</Text>
@@ -140,6 +137,10 @@ const Map = () => {
               <Text style={styles.weatherText}>
                 Weather: {weatherData.list[0].weather[0].description}
               </Text>
+              <Text style={styles.weatherText}>
+                Township: {weatherData.city.name}
+              </Text>
+              
             </View>
           )}
         </>
