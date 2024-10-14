@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { SafeAreaView ,View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 import MapView, { Circle, Marker } from "react-native-maps"; 
 import * as Location from "expo-location";
 import axios from "axios"; 
+import { StatusBar } from "expo-status-bar";
 
 const Map = () => {
   const [location, setLocation] = useState(null);
@@ -115,7 +116,7 @@ const Map = () => {
               strokeWidth={3}
             />
 
-            {/* Render the marker if it exists */}
+            {/* marker rendering if exists */}
             {marker && (
               <Marker coordinate={marker} title={"Selected Location"} />
             )}
@@ -145,7 +146,9 @@ const Map = () => {
           )}
         </>
       )}
+       <StatusBar style="auto"/>
     </View>
+    
   );
 };
 
