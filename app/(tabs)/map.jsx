@@ -89,8 +89,9 @@ const Map = () => {
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
             }}
+            optimize={true} 
             onRegionChangeComplete={handleRegionChange}
-            onPress={handleMapPress} // Add onPress handler to the MapView
+            onPress={handleMapPress} 
           >
             {/* Outer white circle */}
             <Circle
